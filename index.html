@@ -85,12 +85,6 @@
     <div class="wait"><b>Please be patient:</b> after joining, Google Play can take a few minutes to a few hours to show you the app. "Item not found" is normal at first: try again a bit later.</div>
     <p style="margin-top:12px"><b>Please keep it installed for at least 2 weeks</b> and play a few runs. Tell us what you loved and what was confusing!</p>
   </div>
-  <div class="card">
-    <h2>No Android phone handy?</h2>
-    <a class="btn green" id="btn-play" href="https://keepy-legend-play.pages.dev/play-cad29e/">▶ Play in your browser</a>
-    <div class="note">Plays right here in your browser, best on a phone. No download, no sign-up.</div>
-  </div>
-
   <div class="card" id="android-soon">
     <h2>Android app</h2>
     <p>The Android app is coming to Google Play very soon, with a free test for the first players. Come back to this page to join.</p>
@@ -104,7 +98,7 @@
   var ANDROID_TEST_OPEN = true;
   var EVENTS_URL = "https://mmw-site-events.miav55555.workers.dev/";
   var SERVICE = "Keepy Legend Site";
-  var PAGE_VERSION = "2";
+  var PAGE_VERSION = "3";
   var params = new URLSearchParams(location.search);
   var ua = navigator.userAgent || "";
   var ref = document.referrer || "";
@@ -120,9 +114,6 @@
     var payload = { streams: [{ stream: { service_name: SERVICE, deployment_environment: "production", kind: "event" }, values: [[String(Date.now()) + "000000", parts.join(" ")]] }] };
     try { fetch(EVENTS_URL, { method: "POST", headers: { "Content-Type": "text/plain" }, body: JSON.stringify(payload), keepalive: true }); } catch (e) {}
   }
-  // keep the ad's utm tags on the game link
-  var play = document.getElementById("btn-play");
-  if (location.search) play.href += location.search;
   if (ANDROID_TEST_OPEN) {
     document.getElementById("android-soon").hidden = true;
     document.getElementById("android-test").hidden = false;
@@ -141,7 +132,7 @@
     }
   }
   send("landing_view");
-  ["btn-play", "btn-join", "btn-optin", "btn-install"].forEach(function (id) {
+  ["btn-join", "btn-optin", "btn-install"].forEach(function (id) {
     document.getElementById(id).addEventListener("click", function () { send(id.replace("btn-", "") + "_click"); });
   });
 })();
