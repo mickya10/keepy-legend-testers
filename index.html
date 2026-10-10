@@ -59,13 +59,6 @@
       <li>🚀 Swipe up to flick it over your head for headers</li>
       <li>✨ Mix body parts for up to x5, all five = AROUND THE BODY!</li>
     </ul>
-    <a class="btn green" id="btn-play" href="https://keepy-legend-play.pages.dev/play-cad29e/">▶ Play now, free</a>
-    <div class="note">Plays right here in your browser, best on a phone. No download, no sign-up.</div>
-  </div>
-
-  <div class="card" id="android-soon">
-    <h2>Android app</h2>
-    <p>The Android app is coming to Google Play very soon, with a free test for the first players. Come back to this page to join.</p>
   </div>
 
   <div class="card" id="android-test" hidden>
@@ -92,15 +85,26 @@
     <div class="wait"><b>Please be patient:</b> after joining, Google Play can take a few minutes to a few hours to show you the app. "Item not found" is normal at first: try again a bit later.</div>
     <p style="margin-top:12px"><b>Please keep it installed for at least 2 weeks</b> and play a few runs. Tell us what you loved and what was confusing!</p>
   </div>
+  <div class="card">
+    <h2>No Android phone handy?</h2>
+    <a class="btn green" id="btn-play" href="https://keepy-legend-play.pages.dev/play-cad29e/">▶ Play in your browser</a>
+    <div class="note">Plays right here in your browser, best on a phone. No download, no sign-up.</div>
+  </div>
+
+  <div class="card" id="android-soon">
+    <h2>Android app</h2>
+    <p>The Android app is coming to Google Play very soon, with a free test for the first players. Come back to this page to join.</p>
+  </div>
+
   <footer>MA Soft · Keepy Legend · test</footer>
 </main>
 <script>
 (function () {
   // Flip to true once the Google Group and the Play closed test exist.
-  var ANDROID_TEST_OPEN = false;
+  var ANDROID_TEST_OPEN = true;
   var EVENTS_URL = "https://mmw-site-events.miav55555.workers.dev/";
   var SERVICE = "Keepy Legend Site";
-  var PAGE_VERSION = "1";
+  var PAGE_VERSION = "2";
   var params = new URLSearchParams(location.search);
   var ua = navigator.userAgent || "";
   var ref = document.referrer || "";
