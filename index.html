@@ -38,6 +38,7 @@
   .btn.gold { background: var(--gold); }
   .btn:active { transform: translateY(4px); box-shadow: 0 1px 0 var(--ink); }
   .wait { background: #fff1c2; border: 2px dashed #e0a800; border-radius: 14px; padding: 10px 12px; font-size: 15px; line-height: 1.4; margin: 6px 0; }
+  .handoff { border-color: var(--ink); background: #e9fbe9; }
   .note { font-size: 14px; opacity: .75; margin-top: 8px; line-height: 1.4; }
   .team img { display: block; width: 100%; max-width: 360px; height: auto; margin: 4px auto 10px; }
   footer { text-align: center; color: #1f4d2a; font-size: 13px; margin-top: 16px; font-weight: 600; }
@@ -73,15 +74,22 @@
     <p>Pick kits, boots and hair colors, put your own number and name on the shirt, and juggle a tennis ball, a melon or an egg.</p>
   </div>
 
+  <div class="card handoff" id="inapp-go" hidden>
+    <h2>Continue in Chrome</h2>
+    <p>This app's browser can't sign in to Google, and the test needs your Google account. Tap below to open this page in <b>Chrome</b> and finish there in under a minute.</p>
+    <a class="btn green" id="btn-chrome" href="#">Open in Chrome ➜</a>
+  </div>
+
   <div class="card" id="android-test" hidden>
     <h2>Join the Android test in 2 steps</h2>
     <p>Use the same Google account that is signed in to the Play Store on your Android phone.</p>
     <div class="wait" id="inapp-note" hidden><b>Heads-up:</b> you're in an in-app browser that isn't signed in to Google, so the buttons below open <b>Chrome</b> (or the Play Store), where your Google account is.</div>
+    <div class="wait" id="welcome-chrome" hidden><b>You're in Chrome now.</b> Do the 2 steps below and you're in!</div>
     <div class="step">
       <span class="num">1</span>
       <div>
         <b class="t">Join the testers group</b>
-        On the page that opens, tap <b>Join group</b>. The group never sends email.
+        On the page that opens, tap the blue <b>Join group</b> button (and <b>Join group</b> again to confirm), then press <b>Back</b> to return here. The group never sends email.
         <a class="btn blue" id="btn-join" href="https://groups.google.com/g/keepy-legend-testers/about" target="_blank" rel="noopener">Join the group</a>
       </div>
     </div>
@@ -110,7 +118,7 @@
   var ANDROID_TEST_OPEN = true;
   var EVENTS_URL = "https://mmw-site-events.miav55555.workers.dev/";
   var SERVICE = "Keepy Legend Site";
-  var PAGE_VERSION = "4";
+  var PAGE_VERSION = "5";
   var params = new URLSearchParams(location.search);
   var ua = navigator.userAgent || "";
   var ref = document.referrer || "";
@@ -124,13 +132,31 @@
     var parts = ["event=" + esc(name), "app_version=" + esc(PAGE_VERSION)];
     for (var k in base) parts.push("event_data_" + k + "=" + esc(base[k]));
     var payload = { streams: [{ stream: { service_name: SERVICE, deployment_environment: "production", kind: "event" }, values: [[String(Date.now()) + "000000", parts.join(" ")]] }] };
-    try { fetch(EVENTS_URL, { method: "POST", headers: { "Content-Type": "text/plain" }, body: JSON.stringify(payload), keepalive: true }); } catch (e) {}
+    try { fetch(EVENTS_URL, { method: "POST", headers: { "Content-Type": "text/plain" }, body: JSON.stringify(payload), keepalive: true }).catch(function () {}); } catch (e) {}
   }
   if (ANDROID_TEST_OPEN) {
     document.getElementById("android-soon").hidden = true;
     document.getElementById("android-test").hidden = false;
-    // In-app browsers (Taboola, Facebook, ...) aren't signed in to Google: hand the links to Chrome / the Play Store app.
-    if (platform === "android" && inApp !== "none") {
+    // In-app browsers (Taboola, Facebook, ...) aren't signed in to Google, and handing single links to Chrome strands
+    // the visitor there without the next steps. So the whole page moves to Chrome first; ?stay=1 (the fallback when
+    // Chrome isn't installed) keeps the old per-link handoff.
+    var stay = params.get("stay") === "1";
+    if (params.get("via") === "inapp" && inApp === "none") {
+      base.flow = "from_inapp";
+      document.getElementById("welcome-chrome").hidden = false;
+    }
+    if (platform === "android" && inApp !== "none" && !stay) {
+      base.flow = "inapp_handoff";
+      document.getElementById("android-test").hidden = true;
+      document.getElementById("inapp-go").hidden = false;
+      var q = new URLSearchParams(location.search);
+      q.set("via", "inapp");
+      var here = location.host + location.pathname + "?" + q.toString();
+      q.set("stay", "1");
+      var fallback = "https://" + location.host + location.pathname + "?" + q.toString();
+      document.getElementById("btn-chrome").href = "intent://" + here + "#Intent;scheme=https;package=com.android.chrome;S.browser_fallback_url=" + encodeURIComponent(fallback) + ";end";
+      document.getElementById("btn-chrome").addEventListener("click", function () { send("open_chrome_click"); });
+    } else if (platform === "android" && inApp !== "none") {
       base.flow = "chrome_intent";
       document.getElementById("inapp-note").hidden = false;
       ["btn-join", "btn-optin"].forEach(function (id) {
