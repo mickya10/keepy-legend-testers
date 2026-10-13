@@ -39,6 +39,7 @@
   .btn:active { transform: translateY(4px); box-shadow: 0 1px 0 var(--ink); }
   .wait { background: #fff1c2; border: 2px dashed #e0a800; border-radius: 14px; padding: 10px 12px; font-size: 15px; line-height: 1.4; margin: 6px 0; }
   .note { font-size: 14px; opacity: .75; margin-top: 8px; line-height: 1.4; }
+  .team img { display: block; width: 100%; max-width: 360px; height: auto; margin: 4px auto 10px; }
   footer { text-align: center; color: #1f4d2a; font-size: 13px; margin-top: 16px; font-weight: 600; }
 </style>
 </head>
@@ -47,18 +48,29 @@
   <div class="hero">
     <div class="logo"><span class="a">BONK</span><span class="b">BALL</span></div>
     <p class="tag">how long can you keep it up?</p>
-    <img class="legend" src="legend.webp" alt="The Keepy Legend footballer">
+    <picture>
+      <source media="(prefers-reduced-motion: reduce)" srcset="legend-still.webp">
+      <img class="legend" src="legend-juggle.webp" alt="The Keepy Legend footballer juggling a ball">
+    </picture>
   </div>
 
   <div class="card">
     <h2>Be one of the first players!</h2>
     <p>Bonkball is a pack of silly ball games for Android, starring <b>Keepy Legend</b>: 3D football juggling where one tap at the right moment keeps the ball up.</p>
     <ul class="perks">
-      <li>⚽ Juggle with feet, knees, chest, shoulders and head</li>
-      <li>🎯 Perfect timing scores double, a bad one is a SHANK!</li>
-      <li>🏀 Plus 5 more games: dunk into hippos, bonk with your head, climb as a slime...</li>
-      <li>✈️ Free, plays offline, 100 levels and a Daily challenge</li>
+      <li>⚽ Level up to unlock knees, chest, headers, flicks, stalls and around the world</li>
+      <li>🗺️ 6 venues from the Backyard to a World Cup night final, with wind, pigeons and dogs</li>
+      <li>⭐ 30 challenges, 49 trophies, missions and a Daily Juggle</li>
+      <li>👻 Race the ghost of your best run</li>
+      <li>🏀 Plus 5 more silly games with 100 levels: dunk into hippos, bonk with your head...</li>
+      <li>✈️ Free and plays offline</li>
     </ul>
+  </div>
+
+  <div class="card team">
+    <h2>Dress your player</h2>
+    <img src="team.webp" alt="Three players in different kits, hair colors and shirt numbers">
+    <p>Pick kits, boots and hair colors, put your own number and name on the shirt, and juggle a tennis ball, a melon or an egg.</p>
   </div>
 
   <div class="card" id="android-test" hidden>
