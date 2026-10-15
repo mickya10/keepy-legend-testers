@@ -48,69 +48,69 @@
 <main>
   <div class="hero">
     <div class="logo"><span class="a">JUGGLE</span><span class="b">LEGEND</span></div>
-    <p class="tag">how long can you keep it up?</p>
+    <p class="tag" data-t="tag">how long can you keep it up?</p>
     <picture>
       <source media="(prefers-reduced-motion: reduce)" srcset="legend-still.webp">
-      <img class="legend" src="legend-juggle.webp" alt="The Keepy Legend footballer juggling a ball">
+      <img class="legend" src="legend-juggle.webp" alt="The Juggle Legend footballer juggling a ball" data-alt="alt">
     </picture>
   </div>
 
   <div class="card">
-    <h2>Be one of the first players!</h2>
-    <p><b>Juggle Legend</b> is a 3D football juggling game for Android: one tap at the right moment keeps the ball up. Start in the backyard and juggle your way to a World Cup final.</p>
+    <h2 data-t="h1">Be one of the first players!</h2>
+    <p data-t="intro"><b>Juggle Legend</b> is a 3D football juggling game for Android: one tap at the right moment keeps the ball up. Start in the backyard and juggle your way to a World Cup final.</p>
     <ul class="perks">
-      <li>⚽ Level up to unlock knees, chest, headers, flicks, stalls and around the world</li>
-      <li>🗺️ 6 venues from the Backyard to a World Cup night final, with wind, pigeons and dogs</li>
-      <li>⭐ 30 challenges, 49 trophies, missions and a Daily Juggle</li>
-      <li>👻 Race the ghost of your best run</li>
-      <li>🏀 Plus 5 more silly games with 100 levels: dunk into hippos, bonk with your head...</li>
-      <li>✈️ Free and plays offline</li>
+      <li data-t="p1">⚽ Level up to unlock knees, chest, headers, flicks, stalls and around the world</li>
+      <li data-t="p2">🗺️ 6 venues from the Backyard to a World Cup night final, with wind, pigeons and dogs</li>
+      <li data-t="p3">⭐ 30 challenges, 49 trophies, missions and a Daily Juggle</li>
+      <li data-t="p4">👻 Race the ghost of your best run</li>
+      <li data-t="p5">🏀 Plus 5 more silly games with 100 levels: dunk into hippos, bonk with your head...</li>
+      <li data-t="p6">✈️ Free and plays offline</li>
     </ul>
   </div>
 
   <div class="card team">
-    <h2>Dress your player</h2>
-    <img src="team.webp" alt="Three players in different kits, hair colors and shirt numbers">
-    <p>Pick kits, boots and hair colors, put your own number and name on the shirt, and juggle a tennis ball, a melon or an egg.</p>
+    <h2 data-t="dress">Dress your player</h2>
+    <img src="team.webp" alt="Three players in different kits, hair colors and shirt numbers" data-alt="teamalt">
+    <p data-t="dresstxt">Pick kits, boots and hair colors, put your own number and name on the shirt, and juggle a tennis ball, a melon or an egg.</p>
   </div>
 
   <div class="card handoff" id="inapp-go" hidden>
-    <h2>Continue in Chrome</h2>
-    <p>This app's browser can't sign in to Google, and the test needs your Google account. Tap below to open this page in <b>Chrome</b> and finish there in under a minute.</p>
-    <a class="btn green" id="btn-chrome" href="#">Open in Chrome ➜</a>
+    <h2 data-t="chromet">Continue in Chrome</h2>
+    <p data-t="chrome">This app's browser can't sign in to Google, and the test needs your Google account. Tap below to open this page in <b>Chrome</b> and finish there in under a minute.</p>
+    <a class="btn green" id="btn-chrome" href="#" data-t="chromeb">Open in Chrome ➜</a>
   </div>
 
   <div class="card" id="android-test" hidden>
-    <h2>Join the Android test in 2 steps</h2>
-    <p>Use the same Google account that is signed in to the Play Store on your Android phone.</p>
-    <div class="wait" id="inapp-note" hidden><b>Heads-up:</b> you're in an in-app browser that isn't signed in to Google, so the buttons below open <b>Chrome</b> (or the Play Store), where your Google account is.</div>
-    <div class="wait" id="welcome-chrome" hidden><b>You're in Chrome now.</b> Do the 2 steps below and you're in!</div>
+    <h2 data-t="h2">Join the Android test in 2 steps</h2>
+    <p data-t="account">Use the same Google account that is signed in to the Play Store on your Android phone.</p>
+    <div class="wait" id="inapp-note" data-t="inapp" hidden><b>Heads-up:</b> you're in an in-app browser that isn't signed in to Google, so the buttons below open <b>Chrome</b> (or the Play Store), where your Google account is.</div>
+    <div class="wait" id="welcome-chrome" data-t="welcome" hidden><b>You're in Chrome now.</b> Do the 2 steps below and you're in!</div>
     <div class="step">
       <span class="num">1</span>
       <div>
-        <b class="t">Join the testers group</b>
-        On the page that opens, tap the blue <b>Join group</b> button (and <b>Join group</b> again to confirm), then press <b>Back</b> to return here. The group never sends email.
-        <a class="btn blue" id="btn-join" href="https://groups.google.com/g/keepy-legend-testers/about" target="_blank" rel="noopener">Join the group</a>
+        <b class="t" data-t="s1t">Join the testers group</b>
+        <span data-t="s1">On the page that opens, tap the blue <b>Join group</b> button (and <b>Join group</b> again to confirm), then press <b>Back</b> to return here. The group never sends email.</span>
+        <a class="btn blue" id="btn-join" href="https://groups.google.com/g/keepy-legend-testers/about" target="_blank" rel="noopener" data-t="b1">Join the group</a>
       </div>
     </div>
     <div class="step">
       <span class="num">2</span>
       <div>
-        <b class="t">Become a tester and install</b>
-        Open the tester page, tap <b>Become a tester</b>, then install from Google Play.
-        <a class="btn gold" id="btn-optin" href="https://play.google.com/apps/testing/com.masoft.keepylegend" target="_blank" rel="noopener">Become a tester</a>
-        <a class="btn gold" id="btn-install" href="https://play.google.com/store/apps/details?id=com.masoft.keepylegend" target="_blank" rel="noopener">Install from Google Play</a>
+        <b class="t" data-t="s2t">Become a tester and install</b>
+        <span data-t="s2">Open the tester page, tap <b>Become a tester</b>, then install from Google Play.</span>
+        <a class="btn gold" id="btn-optin" href="https://play.google.com/apps/testing/com.masoft.keepylegend" target="_blank" rel="noopener" data-t="b2">Become a tester</a>
+        <a class="btn gold" id="btn-install" href="https://play.google.com/store/apps/details?id=com.masoft.keepylegend" target="_blank" rel="noopener" data-t="b3">Install from Google Play</a>
       </div>
     </div>
-    <div class="wait"><b>Please be patient:</b> after joining, Google Play can take a few minutes to a few hours to show you the app. "Item not found" is normal at first: try again a bit later.</div>
-    <p style="margin-top:12px"><b>Please keep it installed for at least 2 weeks</b> and play a few runs. Tell us what you loved and what was confusing!</p>
+    <div class="wait" data-t="patience"><b>Please be patient:</b> after joining, Google Play can take a few minutes to a few hours to show you the app. "Item not found" is normal at first: try again a bit later.</div>
+    <p style="margin-top:12px" data-t="keep"><b>Please keep it installed for at least 2 weeks</b> and play a few runs. Tell us what you loved and what was confusing!</p>
   </div>
   <div class="card" id="android-soon">
-    <h2>Android app</h2>
-    <p>The Android app is coming to Google Play very soon, with a free test for the first players. Come back to this page to join.</p>
+    <h2 data-t="soont">Android app</h2>
+    <p data-t="soon">The Android app is coming to Google Play very soon, with a free test for the first players. Come back to this page to join.</p>
   </div>
 
-  <footer>MA Soft · Juggle Legend · Android closed test</footer>
+  <footer data-t="footer">MA Soft · Juggle Legend · Android closed test</footer>
 </main>
 <script>
 (function () {
@@ -118,15 +118,100 @@
   var ANDROID_TEST_OPEN = true;
   var EVENTS_URL = "https://mmw-site-events.miav55555.workers.dev/";
   var SERVICE = "Keepy Legend Site";
-  var PAGE_VERSION = "6";
+  var PAGE_VERSION = "7";
   var params = new URLSearchParams(location.search);
+  // Spanish (most of the Taboola traffic, from Mexico) and Russian for phones set to those languages, or ?lang=es|ru|en.
+  // Ukrainian phones keep English. Google's own pages (the group, the Play tester page) already show in the phone's
+  // language, so the copy describes their buttons instead of quoting them.
+  var I18N = {
+    es: {
+      title: "Juggle Legend - Dominadas de fútbol en 3D para Android",
+      tag: "¿cuánto tiempo puedes mantenerla en el aire?",
+      alt: "El futbolista de Juggle Legend haciendo dominadas",
+      h1: "¡Sé de los primeros en jugar!",
+      intro: "<b>Juggle Legend</b> es un juego de dominadas de fútbol en 3D para Android: un toque en el momento justo mantiene el balón en el aire. Empieza en el patio de tu casa y llega a una final del Mundial.",
+      p1: "⚽ Sube de nivel para desbloquear rodillas, pecho, cabezazos, globitos, controles y la vuelta al mundo",
+      p2: "🗺️ 6 escenarios, del patio a una final nocturna del Mundial, con viento, palomas y perros",
+      p3: "⭐ 30 desafíos, 49 trofeos, misiones y un reto diario",
+      p4: "👻 Compite contra el fantasma de tu mejor partida",
+      p5: "🏀 Y 5 juegos locos más con 100 niveles: encesta en hipopótamos, golpea con la cabeza...",
+      p6: "✈️ Gratis y funciona sin internet",
+      dress: "Viste a tu jugador",
+      teamalt: "Tres jugadores con distintas camisetas, peinados y números",
+      dresstxt: "Elige camisetas, botines y color de pelo, pon tu número y tu nombre en la camiseta, y haz dominadas con una pelota de tenis, un melón o un huevo.",
+      chromet: "Sigue en Chrome",
+      chrome: "El navegador de esta app no puede iniciar sesión en Google, y la prueba necesita tu cuenta de Google. Toca abajo para abrir esta página en <b>Chrome</b> y termina allí en menos de un minuto.",
+      chromeb: "Abrir en Chrome ➜",
+      h2: "Únete a la prueba de Android en 2 pasos",
+      account: "Usa la misma cuenta de Google con la que entras a Play Store en tu teléfono Android.",
+      inapp: "<b>Ojo:</b> estás en un navegador dentro de otra app que no tiene tu cuenta de Google, así que los botones de abajo abren <b>Chrome</b> (o Play Store), donde sí está tu cuenta.",
+      welcome: "<b>Ya estás en Chrome.</b> ¡Haz los 2 pasos de abajo y listo!",
+      s1t: "Únete al grupo de testers",
+      s1: "En la página que se abre, toca el botón azul para <b>unirte al grupo</b> (y confírmalo otra vez), luego toca <b>Atrás</b> para volver aquí. El grupo nunca envía correos.",
+      b1: "Unirme al grupo",
+      s2t: "Hazte tester e instala",
+      s2: "Abre la página de testers, toca el botón para <b>hacerte tester</b> y luego instala desde Google Play.",
+      b2: "Hacerme tester",
+      b3: "Instalar desde Google Play",
+      patience: "<b>Ten paciencia:</b> después de unirte, Google Play puede tardar desde unos minutos hasta unas horas en mostrarte la app. Si dice \"No se encontró el elemento\", es normal: vuelve a intentarlo un poco más tarde.",
+      keep: "<b>Por favor, mantenla instalada al menos 2 semanas</b> y juega algunas partidas. Cuéntanos qué te encantó y qué fue confuso.",
+      soont: "App de Android",
+      soon: "La app de Android llegará muy pronto a Google Play, con una prueba gratis para los primeros jugadores. Vuelve a esta página para unirte.",
+      footer: "MA Soft · Juggle Legend · prueba cerrada en Android"
+    },
+    ru: {
+      title: "Juggle Legend - футбольное жонглирование в 3D для Android",
+      tag: "сколько ты продержишь мяч в воздухе?",
+      alt: "Футболист Juggle Legend чеканит мяч",
+      h1: "Стань одним из первых игроков!",
+      intro: "<b>Juggle Legend</b> - это 3D-игра про чеканку мяча для Android: одно касание в нужный момент держит мяч в воздухе. Начни во дворе и дойди до финала чемпионата мира.",
+      p1: "⚽ Повышай уровень и открывай колени, грудь, удары головой, подбросы, остановки и «вокруг света»",
+      p2: "🗺️ 6 площадок, от двора до ночного финала чемпионата мира, с ветром, голубями и собаками",
+      p3: "⭐ 30 испытаний, 49 трофеев, задания и ежедневная чеканка",
+      p4: "👻 Соревнуйся с призраком своей лучшей попытки",
+      p5: "🏀 И ещё 5 смешных игр на 100 уровней: забрасывай мяч бегемотам, бей головой...",
+      p6: "✈️ Бесплатно и работает без интернета",
+      dress: "Одень своего игрока",
+      teamalt: "Три игрока в разной форме, с разными причёсками и номерами",
+      dresstxt: "Выбирай форму, бутсы и цвет волос, нанеси свой номер и имя на футболку и чекань теннисный мяч, дыню или яйцо.",
+      chromet: "Продолжи в Chrome",
+      chrome: "Браузер этого приложения не может войти в Google, а для теста нужен твой аккаунт Google. Нажми ниже, чтобы открыть эту страницу в <b>Chrome</b>, и закончи там меньше чем за минуту.",
+      chromeb: "Открыть в Chrome ➜",
+      h2: "Присоединяйся к тесту Android в 2 шага",
+      account: "Используй тот же аккаунт Google, под которым ты вошёл в Play Маркет на своём Android-телефоне.",
+      inapp: "<b>Внимание:</b> ты во встроенном браузере другого приложения, где нет твоего аккаунта Google, поэтому кнопки ниже открывают <b>Chrome</b> (или Play Маркет), где твой аккаунт есть.",
+      welcome: "<b>Теперь ты в Chrome.</b> Сделай 2 шага ниже, и всё готово!",
+      s1t: "Вступи в группу тестировщиков",
+      s1: "На открывшейся странице нажми синюю кнопку, чтобы <b>вступить в группу</b> (и подтверди ещё раз), затем нажми <b>Назад</b>, чтобы вернуться сюда. Группа никогда не присылает писем.",
+      b1: "Вступить в группу",
+      s2t: "Стань тестировщиком и установи",
+      s2: "Открой страницу тестировщиков, нажми кнопку, чтобы <b>стать тестировщиком</b>, затем установи игру из Google Play.",
+      b2: "Стать тестировщиком",
+      b3: "Установить из Google Play",
+      patience: "<b>Немного терпения:</b> после вступления Google Play может показывать приложение от нескольких минут до нескольких часов. Если написано «Объект не найден», это нормально: попробуй чуть позже.",
+      keep: "<b>Пожалуйста, не удаляй игру хотя бы 2 недели</b> и сыграй несколько раз. Расскажи, что понравилось и что было непонятно.",
+      soont: "Приложение для Android",
+      soon: "Приложение для Android скоро появится в Google Play, с бесплатным тестом для первых игроков. Возвращайся на эту страницу, чтобы присоединиться.",
+      footer: "MA Soft · Juggle Legend · закрытый тест на Android"
+    }
+  };
+  var langParam = (params.get("lang") || "").toLowerCase();
+  var navLang = (navigator.language || "").toLowerCase();
+  var pageLang = I18N[langParam] ? langParam : langParam === "en" ? "en" : /^es\b/.test(navLang) ? "es" : /^ru\b/.test(navLang) ? "ru" : "en";
+  if (I18N[pageLang]) {
+    var T = I18N[pageLang];
+    document.documentElement.lang = pageLang;
+    document.title = T.title;
+    document.querySelectorAll("[data-t]").forEach(function (el) { var t = T[el.getAttribute("data-t")]; if (t) el.innerHTML = t; });
+    document.querySelectorAll("[data-alt]").forEach(function (el) { var t = T[el.getAttribute("data-alt")]; if (t) el.alt = t; });
+  }
   var ua = navigator.userAgent || "";
   var ref = document.referrer || "";
   var source = params.get("utm_source") || (/taboola/i.test(ref) ? "taboola" : ref ? "referral" : "direct");
   var platform = /Android/i.test(ua) ? "android" : /iPhone|iPad|iPod/i.test(ua) ? "ios" : "desktop";
   var inApp = /FBAN|FBAV/i.test(ua) ? "facebook" : /Instagram/i.test(ua) ? "instagram" : /TikTok/i.test(ua) ? "tiktok" : /WhatsApp/i.test(ua) ? "whatsapp" : /Telegram/i.test(ua) ? "telegram" : /\bwv\b/.test(ua) ? "webview" : "none";
   var isBot = /bot|crawl|spider|slurp|facebookexternalhit|Twitterbot|Googlebot|bingbot|Applebot|WhatsApp|TelegramBot/i.test(ua) ? "true" : "false";
-  var base = { source: source, medium: params.get("utm_medium") || "", campaign: params.get("utm_campaign") || "", referrer: ref.slice(0, 200), platform: platform, in_app_browser: inApp, is_bot: isBot, lang: (navigator.language || "").slice(0, 8), android_open: String(ANDROID_TEST_OPEN) };
+  var base = { source: source, medium: params.get("utm_medium") || "", campaign: params.get("utm_campaign") || "", referrer: ref.slice(0, 200), platform: platform, in_app_browser: inApp, is_bot: isBot, lang: (navigator.language || "").slice(0, 8), page_lang: pageLang, android_open: String(ANDROID_TEST_OPEN) };
   function esc(v) { var s = String(v); return /[ ="]/.test(s) ? '"' + s.replace(/\\/g, "\\\\").replace(/"/g, '\\"') + '"' : (s || '""'); }
   function send(name) {
     var parts = ["event=" + esc(name), "app_version=" + esc(PAGE_VERSION)];
